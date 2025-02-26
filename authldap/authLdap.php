@@ -4,7 +4,7 @@
 Plugin Name: AuthLDAP
 Plugin URI: https://github.com/heiglandreas/authLdap
 Description: This plugin allows you to use your existing LDAP as authentication base for WordPress
-Version: 3.1.0
+Version: 3.1.1
 Author: Andreas Heigl <andreas@heigl.org>
 Author URI: http://andreas.heigl.org
 License: MIT
@@ -293,7 +293,6 @@ function authLdap_login($user, $username, $password, $already_md5 = false)
 
 	if ($loggedInUser instanceof LoggedInUser) {
 		// The user was just logged in, so let's create a WP_User-Object from it.
-		$logger->log(var_export($loggedInUser, true));
 		$mapper = new LoggedInUserToWpUser(
 			$ldapServerList,
 			$logger,
